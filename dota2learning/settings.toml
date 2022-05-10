@@ -1,0 +1,4 @@
+name = "dota2learning"
+
+[database]
+url = "sqlite:///dota2learning.db"
