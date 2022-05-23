@@ -1,4 +1,7 @@
 name = "dota2learning"
 
 [database]
-url = "sqlite:///dota2learning.db"
+host="localhost"
+database="dota2learning"
+user="root"
+password="toor"
