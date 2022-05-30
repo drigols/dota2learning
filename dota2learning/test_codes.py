@@ -8,4 +8,4 @@ from api.opendota import get_heroes_stats
 
 
 if __name__ =="__main__":
-  print(get_heroes_stats())
+    print(get_heroes_stats())

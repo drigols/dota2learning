@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "Dota2Learning"
+version = "0.1.0"
+description = "Statistics and Machine Learning for your Dota2 Games."
+license = "MIT"
+authors = [
+    "drigols <drigols.creative@gmail.com>",
+]
+maintainers = [
+    "drigols <drigols.creative@gmail.com>",
+]
+readme = "README.md"
+homepage = "Coming soon..."
+repository = "https://github.com/drigols/dota2learning/"
+documentation = "Coming soon..."
+
+keywords = ["dota2", "statistics", "machine Learning", "deep learning"]
+
+[tool.poetry]
+include = ["CHANGELOG.md"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+requests = "^2.27.1"
+dynaconf = "^3.1.8"
+mysql-connector-python = "^8.0.29"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/drigols/dota2learning/issues"
