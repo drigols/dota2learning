@@ -3,21 +3,23 @@ name = "Dota2Learning"
 version = "0.1.0"
 description = "Statistics and Machine Learning for your Dota2 Games."
 license = "MIT"
+readme = "README.md"
+homepage = "Coming soon..."
+repository = "https://github.com/drigols/dota2learning/"
+documentation = "Coming soon..."
+include = ["CHANGELOG.md"]
 authors = [
     "drigols <drigols.creative@gmail.com>",
 ]
 maintainers = [
     "drigols <drigols.creative@gmail.com>",
 ]
-readme = "README.md"
-homepage = "Coming soon..."
-repository = "https://github.com/drigols/dota2learning/"
-documentation = "Coming soon..."
-
-keywords = ["dota2", "statistics", "machine Learning", "deep learning"]
-
-[tool.poetry]
-include = ["CHANGELOG.md"]
+keywords = [
+    "dota2",
+    "statistics",
+    "machine Learning",
+    "deep learning",
+]
 
 [tool.poetry.dependencies]
 python = "^3.8"
