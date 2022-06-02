@@ -20,22 +20,3 @@ def get_names(id: int):
     """
     hero_names = get_hero_names_from_database(id)
     typer.echo(hero_names)
-
-
-@app.command()
-def get_id():
-    pass
-
-
-@app.command()
-def get_images():
-    pass
-
-
-@app.command()
-def get_attributes():
-    pass
-
-
-if __name__ == "__main__":
-    app()

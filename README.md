@@ -7,6 +7,8 @@
 
 ```python
 pytest --cov=dota2learning tests/
+or
+py.test --cov-report html --cov dota2learning/ --verbose
 ```
 
 ---

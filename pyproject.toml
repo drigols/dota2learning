@@ -22,12 +22,11 @@ keywords = [
 ]
 
 [tool.poetry.scripts]
-dota2learning = "dota2learning.__main__:app"
+dota2learning = "dota2learning.cli.main:app"
 
 [tool.poetry.dependencies]
 python = "^3.8"
 requests = "^2.27.1"
-dynaconf = "^3.1.8"
 mysql-connector-python = "^8.0.29"
 typer = {extras = ["all"], version = "^0.4.1"}
 
@@ -45,5 +44,6 @@ build-backend = "poetry.core.masonry.api"
 [tool.pytest.ini_options]
 markers = [
     # To run tests with this marks use: pytest -svv -m 'mark-name'.
-    "get_names: Testings for get_names() function in hero.py (CLI).",
+    "get_names: Testings functions that get hero names from database.",
+    "get_heroes_stats: Testings functions that get herostats from OpenDota API.",
 ]

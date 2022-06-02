@@ -4,17 +4,25 @@
 # License: MIT
 
 
+
 import requests
 import json
 
-from .urls import HEROES_STATS_URL
+from dota2learning.api.urls import HEROES_STATS_URL
 
 
-def get_heroes_stats():
+def get_heroes_stats() -> list:
+    """Get Heroes stats from OpenDota API.
+        URL: https://api.opendota.com/api/heroStats
+
+    Returns:
+        list: The return is a list of lists,
+        where each hero is a list contain hero's stats.
+    """
     try:
         response = requests.get(f"{HEROES_STATS_URL}")
     except Exception as error:
-        return print("You have problem to get Heroes Stats:", error)
+        print("You have problem to get Heroes Stats:", error)
     else:
         heroes_stats = []
         temp = []

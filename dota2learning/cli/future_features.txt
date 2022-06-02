@@ -1,0 +1,17 @@
+@app.command()
+def get_id():
+    pass
+
+
+@app.command()
+def get_images():
+    pass
+
+
+@app.command()
+def get_attributes():
+    pass
+
+
+if __name__ == "__main__":
+    app()
