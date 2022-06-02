@@ -102,16 +102,3 @@ def get_hero_names_from_database(id: int) -> dict:
     else:
         print("There is no hero with this ID.")
         return None
-
-
-if __name__ =="__main__":
-
-    # Create Hero table from ready SQL Script.
-    #create_table(hero_table)
-
-    # Insert data into Hero Table.
-    #insert_data_into_table(insert_into_hero_table, get_heroes_stats())
-
-    hero_names = get_hero_names_from_database(500)
-    print(type(hero_names))
-    print(hero_names)
