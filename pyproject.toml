@@ -46,4 +46,5 @@ markers = [
     # To run tests with this marks use: pytest -svv -m 'mark-name'.
     "get_names: Testings functions that get hero names from database.",
     "get_heroes_stats: Testings functions that get herostats from OpenDota API.",
+    "connections: Test for database connections",
 ]

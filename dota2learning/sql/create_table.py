@@ -4,13 +4,6 @@
 # License: MIT
 
 
-test_table = """
-CREATE TABLE d2_test (
-  `id` INT(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  `name` VARCHAR(30) NOT NULL
-);
-"""
-
 hero_table = """
 CREATE TABLE IF NOT EXISTS `Hero` (
   `id` INT NOT NULL,

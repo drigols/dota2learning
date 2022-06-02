@@ -1,7 +1,0 @@
-name = "dota2learning"
-
-[database]
-host="localhost"
-database="dota2learning"
-user="root"
-password="toor"

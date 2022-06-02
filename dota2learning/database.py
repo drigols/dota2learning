@@ -4,7 +4,6 @@
 # License: MIT
 
 
-from unicodedata import name
 import mysql.connector
 from mysql.connector import Error
 
@@ -15,23 +14,49 @@ from dota2learning.sql.insert_queries import insert_into_hero_table
 from dota2learning.sql.select_queries import get_names_query
 
 
-def get_connection():
+def get_connection(
+    host_name='localhost',
+    database_name='dota2learning',
+    user_name='root',
+    user_password='toor'
+):
+    """Create connection on Dota2Learning Database.
+
+    Args:
+        host_name (str, optional): Hostname from your MySQL Server. Defaults to 'localhost'.
+        database_name (str, optional): Database name. Defaults to 'dota2learning'.
+        user_name (str, optional): User name. Defaults to 'root'.
+        user_password (str, optional): User password. Defaults to 'toor'.
+
+    Returns:
+        <class 'mysql.connector.connection_cext'>: The return is a MySQL connection.
+    """
     try:
         connection = mysql.connector.connect(
-            host='localhost',
-            database='dota2learning',
-            user='root',
-            password='toor'
+            host=host_name,
+            database=database_name,
+            user=user_name,
+            password=user_password
         )
     except Exception as error:
-        return print("Error while connecting to MySQL", error)
+        print("Error while connecting to MySQL - ", error)
     else:
         return connection
 
 
 def close_connection(connection):
+    """_summary_
+
+    Args:
+        connection (mysql.connector.connection_cext): The argument received is a MySQL connection.
+
+    Returns:
+        bool: The original return was False when database connection was closed.
+        But, I forced that return was True when database connection was closed.
+    """
     if connection.is_connected:
         connection.close()
+        return True # Force return True.
 
 
 def create_table(sql_script=None):
