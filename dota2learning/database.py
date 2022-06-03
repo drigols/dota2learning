@@ -20,7 +20,7 @@ def get_connection(
     user_name='root',
     user_password='toor'
 ):
-    """Create connection on Dota2Learning Database.
+    """Function to create connection on Dota2Learning Database.
 
     Args:
         host_name (str, optional): Hostname from your MySQL Server. Defaults to 'localhost'.
@@ -29,7 +29,7 @@ def get_connection(
         user_password (str, optional): User password. Defaults to 'toor'.
 
     Returns:
-        <class 'mysql.connector.connection_cext'>: The return is a MySQL connection.
+        <class 'mysql.connector.connection_cext.CMySQLConnection'>: The return is a MySQL connection.
     """
     try:
         connection = mysql.connector.connect(
@@ -38,41 +38,50 @@ def get_connection(
             user=user_name,
             password=user_password
         )
-    except Exception as error:
-        print("Error while connecting to MySQL - ", error)
-    else:
         return connection
+    except mysql.connector.Error as error:
+        print(error)
 
 
-def close_connection(connection):
-    """_summary_
+def close_connection(connection) -> bool:
+    """Function to close Database connection.
 
     Args:
         connection (mysql.connector.connection_cext): The argument received is a MySQL connection.
 
     Returns:
         bool: The original return was False when database connection was closed.
-        But, I forced that return was True when database connection was closed.
+        But, I forced the return to be True when the database connection is closed.
     """
-    if connection.is_connected:
-        connection.close()
-        return True # Force return True.
-
-
-def create_table(sql_script=None):
-    if sql_script == None:
-        return print("Please, enter your SQL Script to Create Table.")
+    if not connection:
+        return False
     else:
-        try:
-            connection = get_connection()
+        connection.close()
+        return True
+
+
+def create_table(sql_script: str) -> bool:
+    """Function to create tables.
+
+    Args:
+        sql_script (str): SQL query to create a table.
+
+    Returns:
+        bool: The return is a True when create the table
+              and False when create except.
+    """
+    try:
+        connection = get_connection()
+        if connection:
             cursor = connection.cursor()
             result = cursor.execute(sql_script)
             print("Table created successfully!")
-        except mysql.connector.Error as error:
-            print("Failed to create table in MySQL: {}".format(error))
-        finally:
             cursor.close()
             close_connection(connection)
+            return True
+    except mysql.connector.Error as error:
+        print(error)
+        return False
 
 
 def insert_data_into_table(insert_query=None, records_to_insert=None):

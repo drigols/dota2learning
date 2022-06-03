@@ -6,24 +6,41 @@
 
 from dota2learning.database import get_connection
 from dota2learning.database import close_connection
+from dota2learning.database import create_table
+
+from dota2learning.sql.create_table import hero_table
+from dota2learning.sql.create_table import invalid_table
 
 
 if __name__ =="__main__":
 
+    #pass
     # Test get_connection.
-    #connection = get_connection(database_name="dota2learning")
-    #print(type(connection))
-    #print(bool(connection))
+    print("\nTesting database connection:")
+    connection = get_connection(database_name="dota1learning")
+    print(type(connection))
+    print(bool(connection))
 
 
-    # Test clo_connection
-    #close = close_connection(connection)
-    #print(type(close))
-    #print(bool(close))
+    # Test close_connection.
+    print("\nTesting close connection:")
+    close = close_connection(connection)
+    print(type(close))
+    print(bool(close))
 
 
     # Create Hero table from ready SQL Script.
-    #create_table(hero_table)
+    #print("\nTesting create valid table:")   
+    #result_valid = create_table(hero_table)
+    #print(type(result_valid))
+    #print(bool(result_valid))
+
+
+    # Create Hero table from ready SQL Script.
+    #print("\nTesting create invalid table:")  
+    #result_invalid = create_table(invalid_table)
+    #print(type(result_invalid))
+    #print(bool(result_invalid))
 
 
     # Insert data into Hero Table.

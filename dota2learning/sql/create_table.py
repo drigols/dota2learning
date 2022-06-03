@@ -3,6 +3,11 @@
 #
 # License: MIT
 
+invalid_table = """
+CREATE TABLE IF NOT EXISTS `invalid_table` (
+
+)
+"""
 
 hero_table = """
 CREATE TABLE IF NOT EXISTS `Hero` (
