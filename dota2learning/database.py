@@ -84,23 +84,18 @@ def create_table(sql_script: str) -> bool:
         return False
 
 
-def insert_data_into_table(insert_query=None, records_to_insert=None):
-    if insert_query == None:
-        return print("Please, enter your SQL Script to insert data in the table.")
-    elif records_to_insert == None:
-        return print("Please, enter your records data to insert data in the table.")
-    else:
-        try:
-            connection = get_connection()
+def insert_data_into_table(insert_query: str, records_to_insert: list):
+    try:
+        connection = get_connection()
+        if connection:
             cursor = connection.cursor()
             cursor.executemany(insert_query, records_to_insert)
             connection.commit()
             print(cursor.rowcount, "Record inserted successfully into table.")
-        except mysql.connector.Error as error:
-            return print("Failed to insert record into MySQL table: {}".format(error))
-        finally:
             cursor.close()
             close_connection(connection)
+    except mysql.connector.Error as error:
+        print(error)
 
 
 def get_hero_names_from_database(id: int) -> dict:

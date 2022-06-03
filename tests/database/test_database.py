@@ -10,9 +10,13 @@ from dota2learning.database import get_connection
 from dota2learning.database import close_connection
 from dota2learning.database import get_hero_names_from_database
 from dota2learning.database import create_table
+from dota2learning.database import insert_data_into_table
 
 from dota2learning.sql.create_table import invalid_table
 from dota2learning.sql.create_table import hero_table
+from dota2learning.sql.insert_queries import insert_into_hero_table
+
+from dota2learning.api.opendota import get_heroes_stats
 
 
 @pytest.mark.connections
@@ -57,6 +61,13 @@ def test_create_table_is_true():
     """Test whether function create_table() returns True after it can create the table."""
     result = create_table(hero_table)
     assert result == True
+
+
+@pytest.mark.insert
+def test_insert_data_into_hero_table_false():
+    """Testing if the return is False when enter except block."""
+    result = insert_data_into_table(insert_into_hero_table, get_heroes_stats())
+    assert bool(result) == False
 
 
 @pytest.mark.get_names

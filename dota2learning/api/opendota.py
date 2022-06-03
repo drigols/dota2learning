@@ -16,8 +16,8 @@ def get_heroes_stats() -> list:
         URL: https://api.opendota.com/api/heroStats
 
     Returns:
-        list: The return is a list of lists,
-        where each hero is a list contain hero's stats.
+        list: The return is a list of dictionaries,
+        where each hero is a dictionary contain hero's stats.
     """
     try:
         response = requests.get(f"{HEROES_STATS_URL}")
