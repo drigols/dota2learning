@@ -4,10 +4,9 @@
 # License: MIT
 
 
-from dota2learning.database import get_connection
-from dota2learning.database import close_connection
-from dota2learning.database import create_table
-from dota2learning.database import insert_data_into_table
+from dota2learning.database.connections import get_connection, close_connection
+from dota2learning.database.create_tables import create_table
+from dota2learning.database.inserts import insert_data_into_table
 
 from dota2learning.api.opendota import get_heroes_stats
 
@@ -18,7 +17,7 @@ from dota2learning.sql.insert_queries import insert_into_hero_table
 
 if __name__ =="__main__":
 
-    #pass
+    pass
     # Test get_connection.
     #print("\nTesting database connection:")
     #connection = get_connection(database_name="dota1learning")
@@ -35,7 +34,7 @@ if __name__ =="__main__":
 
     # Create Hero table from ready SQL Script.
     #print("\nTesting create valid table:")   
-    result_valid = create_table(hero_table)
+    #result_valid = create_table(hero_table)
     #print(type(result_valid))
     #print(bool(result_valid))
 
