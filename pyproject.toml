@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "Dota2Learning"
-version = "0.2.0"
+version = "0.3.0"
 description = "Statistics and Machine Learning for your Dota2 Games."
 license = "MIT"
 readme = "README.md"
@@ -25,7 +25,7 @@ keywords = [
 dota2learning = "dota2learning.cli.main:app"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.10"
 requests = "^2.27.1"
 mysql-connector-python = "^8.0.29"
 typer = {extras = ["all"], version = "^0.4.1"}
