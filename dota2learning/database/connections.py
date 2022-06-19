@@ -9,7 +9,7 @@ import mysql.connector
 
 def get_connection(
     host_name='localhost',
-    database_name='dota2learning',
+    database_name='dota2learning-db',
     user_name='root',
     user_password='toor'
 ):

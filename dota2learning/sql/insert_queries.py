@@ -5,7 +5,7 @@
 
 
 insert_into_hero_table = """
-  INSERT INTO Hero
+  INSERT INTO hero
   (
     id,
     name,

@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS `invalid_table` (
 """
 
 hero_table = """
-CREATE TABLE IF NOT EXISTS `Hero` (
+CREATE TABLE IF NOT EXISTS `hero` (
   `id` INT NOT NULL,
   `name` VARCHAR(50) NOT NULL,
   `localized_name` VARCHAR(50) NOT NULL,
