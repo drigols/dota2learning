@@ -96,16 +96,21 @@ To see the second approach just find for **htmlcov** directory and open **index.
 
 ### Tech Stack
 
- - **View:**
-   - CLI:
+ - **Frondend (View):**
+   - **CLI:**
      - Python:
-       - Typer
- - **Databases:** MySQL
-   - Docker with MySQL
-   - Python:
-     - mysql-connector-python
+       - typer
+   - **Jupyter Notebook:**
+ - **Backend:**
+   - **Consuming API:**
+     - Python:
+       - requrest
+       - json
+   - **Database (Docker + MySQL):**
+     - **Python:**
+       - mysql-connector-python
  - **Testing:**
-   - Python:
+   - **Python:**
      - pytest
      - pytest-cov
 
