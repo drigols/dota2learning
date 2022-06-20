@@ -18,44 +18,33 @@ To use the **Dota2Learning** project  you'll need *Docker* and *Docker Compose* 
 
 We've two containers with one MySQL each:
 
- - **dota2learning-db:**
-   - Used to store all application data.
- - **test-dota2learning-db:**
-   - Used for testing.
+ - **mysql-production:**
+   - **Database:** dota2learning-db
+     - Used to store all application data.
+ - **db-testing:**
+   - **Database:** Create manually for tests.
 
-**NOTE:**  
-You can change MySQL ports on [docker-compose.yml](docker-compose.yml).
-
-To start docker container just enter on terminal:
+To start docker container just enter on console:
 
 ```
 sudo docker compose up -d
 ```
 
-**NOTE:**  
-The **flag -d** is used to start the container in background mode (daemon).
-
-To see docker images you can use:
-
-```
-sudo docker images
-```
-
-And to see docker containers use:
-
-```
-sudo docker container ps -a
-```
-
-**NOTE:**  
-The **flag -a (all)** is used to list all docker containers, running or not.
-
 **[/data](data)**  
-The folder [./data](data) is used to shared MySQL data between host machine and container. By default the data coming from the container will be without permissions because it is coming from **/var/lib/mysql**, so I recommend using the following command in the folder to release permissions:
+The folder [./data](data) is used to shared MySQL data between host machine and container.
 
+**NOTE:**  
+MySQL services can delay some minutes to work, that's why was created a "healthcheck" in Docker Compose that waits for the service to be available and then dumps the data:
+
+```python
+healthcheck:
+  test: mysql --user=root --password=toor dota2learning-db < /home/db-production/dumb-db-production.sql
+  interval: 30s
+  timeout: 10s
+  retries: 6
 ```
-sudo chmod 777 data/ -R
-```
+
+
 
 ---
 

@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   db-production:
-    container_name: mysql-production
+    container_name: db-production
     image: mysql:latest
     restart: always
     environment:
@@ -11,18 +11,22 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - ./data/db-production:/var/lib/mysql
+      - ./data/db-production:/home/db-production
+    healthcheck:
+      test: mysql --user=root --password=toor dota2learning-db < /home/db-production/dumb-db-production.sql
+      interval: 30s
+      timeout: 10s
+      retries: 6
   db-testing:
-    container_name: mysql-testing
+    container_name: db-testing
     image: mysql:latest
     restart: always
     environment:
       MYSQL_HOST: localhost
-      MYSQL_DATABASE: test-dota2learning-db
       MYSQL_ROOT_PASSWORD: toor
     ports:
       - "3307:3306"
     volumes:
-      - ./data/db-testing:/var/lib/mysql
+      - ./data/db-testing:/home/db-testing
 volumes:
   data:
