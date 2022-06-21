@@ -148,7 +148,7 @@ To see the second approach just find for **htmlcov** directory and open **index.
        - typer
    - **Jupyter Notebook:**
  - **Backend:**
-   - **Consuming API:**
+   - **Consuming API [(OpenDota)](https://docs.opendota.com/):**
      - Python:
        - requrest
        - json
