@@ -4,7 +4,8 @@
 
 ## Project Overview
 
- - [Settings](#settings)
+ - [Project Settings](#settings)
+ - [CLI](#cli)
  - [Testing](#testing)
  - [Tech Stack](#tech-stack)
 
@@ -12,9 +13,36 @@
 
 <div id="settings"></div>
 
-## Settings
+## Project Settings
 
-To use the **Dota2Learning** project  you'll need *Docker* and *Docker Compose* in your machine to use the MySQL databases.
+To use **Dota2Learning** project first install Python (^3.10) dependencies:
+
+**pip approach:**
+```
+pip install --require-hashes --upgrade -r requirements.txt
+```
+
+or
+
+```
+pip install --require-hashes -r requirements.txt
+```
+
+**poetry approach:**
+```
+poetry install
+```
+
+You can specify to the command that you do not want the development dependencies installed by passing the **--no-dev** option:
+
+```
+poetry install --no-dev
+```
+
+**NOTE:**  
+However, dev dependencies are needed for tests.
+
+You also will need *Docker* and *Docker Compose* in your machine to use the MySQL databases.
 
 We've two containers with one MySQL each:
 
@@ -31,7 +59,7 @@ sudo docker compose up -d
 ```
 
 **[/data](data)**  
-The folder [./data](data) is used to shared MySQL data between host machine and container.
+The folder [./data](data) is used to shared MySQL data (database) between host machine and container.
 
 **NOTE:**  
 MySQL services can delay some minutes to work, that's why was created a "healthcheck" in Docker Compose that waits for the service to be available and then dumps the data:
@@ -44,7 +72,36 @@ healthcheck:
   retries: 6
 ```
 
+Ok, now you has Python dependencies and Docker container with MySQL Database let's go be happy!
 
+---
+
+<div id="cli"></div>
+
+## CLI
+
+The project has a CLI to get data from the Database. To see CLI commands just enter in the console:
+
+```
+dota2learning --help
+```
+
+**OUTPUT:**  
+```
+Usage: dota2learning [OPTIONS] COMMAND [ARGS]...
+
+Options:
+  --install-completion  Install completion for the current shell.
+  --show-completion     Show completion for the current shell, to copy it or
+                        customize the installation.
+  --help                Show this message and exit.
+
+Commands:
+  hero  Commands for getting Heroes attributes and insights.
+```
+
+**NOTE:**  
+Currently the CLI is being, but has a hero command to get a hero's stats.
 
 ---
 
