@@ -1,5 +1,43 @@
 # Dota2Learning
 
+.. image:: https://img.shields.io/pypi/v/pytest.svg
+    :target: https://pypi.org/project/pytest/
+
+.. image:: https://img.shields.io/conda/vn/conda-forge/pytest.svg
+    :target: https://anaconda.org/conda-forge/pytest
+
+.. image:: https://img.shields.io/pypi/pyversions/pytest.svg
+    :target: https://pypi.org/project/pytest/
+
+.. image:: https://codecov.io/gh/pytest-dev/pytest/branch/main/graph/badge.svg
+    :target: https://codecov.io/gh/pytest-dev/pytest
+    :alt: Code coverage Status
+
+.. image:: https://github.com/pytest-dev/pytest/workflows/test/badge.svg
+    :target: https://github.com/pytest-dev/pytest/actions?query=workflow%3Atest
+
+.. image:: https://results.pre-commit.ci/badge/github/pytest-dev/pytest/main.svg
+   :target: https://results.pre-commit.ci/latest/github/pytest-dev/pytest/main
+   :alt: pre-commit.ci status
+
+.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
+    :target: https://github.com/psf/black
+
+.. image:: https://www.codetriage.com/pytest-dev/pytest/badges/users.svg
+    :target: https://www.codetriage.com/pytest-dev/pytest
+
+.. image:: https://readthedocs.org/projects/pytest/badge/?version=latest
+    :target: https://pytest.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
+
+.. image:: https://img.shields.io/badge/Discord-pytest--dev-blue
+    :target: https://discord.com/invite/pytest-dev
+    :alt: Discord
+
+.. image:: https://img.shields.io/badge/Libera%20chat-%23pytest-orange
+    :target: https://web.libera.chat/#pytest
+    :alt: Libera chat
+
 [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](LICENSE.md)
 
 > Statistics and Machine Learning for your Dota2 Games.
