@@ -1,5 +1,7 @@
 # Dota2Learning
 
+[![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](LICENSE.md)
+
 > Statistics and Machine Learning for your Dota2 Games.
 
 ## Project Overview
