@@ -1,11 +1,12 @@
 # Authors: Rodrigo Leite <drigols.creative@gmail.com>
 #
 # License: MIT
-
+from __future__ import annotations
 
 import mysql.connector
 
-from dota2learning.database.connections import get_connection, close_connection
+from dota2learning.database.connections import close_connection
+from dota2learning.database.connections import get_connection
 
 
 def create_table(sql_script: str) -> bool:

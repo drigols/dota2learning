@@ -1,17 +1,16 @@
 # Authors: Rodrigo Leite <drigols.creative@gmail.com>
 #
 # License: MIT
-
+from __future__ import annotations
 
 from dota2learning.api.opendota import get_heroes_stats
-
-from dota2learning.database.connections import get_connection, close_connection
+from dota2learning.database.connections import close_connection
+from dota2learning.database.connections import get_connection
 from dota2learning.database.create_tables import create_table
-from dota2learning.database.inserts import insert_data_into_table
 from dota2learning.database.get_from_database import (
     get_hero_names_from_database,
 )
-
+from dota2learning.database.inserts import insert_data_into_table
 from dota2learning.sql.create_table import hero_table
 from dota2learning.sql.create_table import invalid_table
 from dota2learning.sql.insert_queries import insert_into_hero_table

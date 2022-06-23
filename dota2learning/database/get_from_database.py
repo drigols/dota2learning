@@ -1,12 +1,12 @@
 # Authors: Rodrigo Leite <drigols.creative@gmail.com>
 #
 # License: MIT
-
+from __future__ import annotations
 
 import mysql.connector
 
-from dota2learning.database.connections import get_connection, close_connection
-
+from dota2learning.database.connections import close_connection
+from dota2learning.database.connections import get_connection
 from dota2learning.sql.select_queries import get_names_query
 
 

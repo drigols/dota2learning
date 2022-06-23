@@ -1,13 +1,13 @@
 # Authors: Rodrigo Leite <drigols.creative@gmail.com>
 #
 # License: MIT
-
+from __future__ import annotations
 
 import pytest
 
+from dota2learning.api.opendota import get_heroes_stats
 from dota2learning.database.inserts import insert_data_into_table
 from dota2learning.sql.insert_queries import insert_into_hero_table
-from dota2learning.api.opendota import get_heroes_stats
 
 
 @pytest.mark.insert

@@ -1,6 +1,7 @@
 # Authors: Rodrigo Leite <drigols.creative@gmail.com>
 #
 # License: MIT
+from __future__ import annotations
 
 
 insert_into_hero_table = """

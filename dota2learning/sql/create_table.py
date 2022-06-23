@@ -1,6 +1,7 @@
 # Authors: Rodrigo Leite <drigols.creative@gmail.com>
 #
 # License: MIT
+from __future__ import annotations
 
 invalid_table = """
 CREATE TABLE IF NOT EXISTS `invalid_table` (

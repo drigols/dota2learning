@@ -1,10 +1,11 @@
 # Authors: Rodrigo Leite <drigols.creative@gmail.com>
 #
 # License: MIT
+from __future__ import annotations
 
+import json
 
 import requests
-import json
 
 from dota2learning.api.urls import HEROES_STATS_URL
 

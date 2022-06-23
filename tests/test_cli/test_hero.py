@@ -1,10 +1,9 @@
 # Authors: Rodrigo Leite <drigols.creative@gmail.com>
 #
 # License: MIT
-
+from __future__ import annotations
 
 import pytest
-
 from typer.testing import CliRunner
 
 from dota2learning.cli.main import app
