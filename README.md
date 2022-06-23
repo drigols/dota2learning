@@ -41,7 +41,7 @@ You can specify to the command that you do not want the development dependencies
 poetry install --no-dev
 ```
 
-**NOTE:**  
+**NOTE:**
 However, dev dependencies are needed for tests.
 
 You also will need *Docker* and *Docker Compose* in your machine to use the MySQL databases.
@@ -60,10 +60,10 @@ To start docker container just enter on console:
 sudo docker compose up -d
 ```
 
-**[/data](data)**  
+**[/data](data)**
 The folder [./data](data) is used to shared MySQL data (database) between host machine and container.
 
-**NOTE:**  
+**NOTE:**
 MySQL services can delay some minutes to work, that's why was created a "healthcheck" in Docker Compose that waits for the service to be available and then dumps the data:
 
 ```python
@@ -96,7 +96,7 @@ The project has a CLI to get data from the Database. To see CLI commands just en
 dota2learning --help
 ```
 
-**OUTPUT:**  
+**OUTPUT:**
 ```
 Usage: dota2learning [OPTIONS] COMMAND [ARGS]...
 
@@ -110,7 +110,7 @@ Commands:
   hero  Commands for getting Heroes attributes and insights.
 ```
 
-**NOTE:**  
+**NOTE:**
 Currently the CLI is being, but has a hero command to get a hero's stats.
 
 ---
@@ -143,7 +143,7 @@ or
 pytest --cov-report html --cov dota2learning/ --verbose
 ```
 
-**NOTE:**  
+**NOTE:**
 To see the second approach just find for **htmlcov** directory and open **index.html** on the browser.
 
 ---
