@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Authors: Rodrigo Leite <drigols.creative@gmail.com>
 #
 # License: MIT
@@ -20,4 +19,4 @@ def test_get_heroes_stats_is_list():
 def test_get_heroes_stats_list_is_empty():
     """Test if get_heroes_stats() function returns is a empty list."""
     result = get_heroes_stats()
-    assert bool(result) == True
+    assert bool(result) is True
