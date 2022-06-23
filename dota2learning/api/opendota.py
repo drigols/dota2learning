@@ -4,7 +4,6 @@
 # License: MIT
 
 
-
 import requests
 import json
 
@@ -33,8 +32,8 @@ def get_heroes_stats() -> list:
             temp.append(heroes[hero]["localized_name"])
             temp.append(heroes[hero]["primary_attr"])
             temp.append(heroes[hero]["attack_type"])
-            temp.append("https://api.opendota.com"+heroes[hero]["img"])
-            temp.append("https://api.opendota.com"+heroes[hero]["icon"])
+            temp.append("https://api.opendota.com" + heroes[hero]["img"])
+            temp.append("https://api.opendota.com" + heroes[hero]["icon"])
             temp.append(heroes[hero]["base_health"])
             temp.append(heroes[hero]["base_health_regen"])
             temp.append(heroes[hero]["base_mana"])

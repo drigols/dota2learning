@@ -13,7 +13,7 @@ from dota2learning.database.get_from_database import get_hero_names_from_databas
 def test_get_hero_names_from_database_id_1():
     """Test if the get_names() function return is a dictionary with names from hero id=1."""
     result = get_hero_names_from_database(1)
-    assert result == {'name': 'npc_dota_hero_antimage', 'localized_name': 'Anti-Mage'}
+    assert result == {"name": "npc_dota_hero_antimage", "localized_name": "Anti-Mage"}
 
 
 @pytest.mark.get_names

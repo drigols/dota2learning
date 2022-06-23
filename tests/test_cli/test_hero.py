@@ -19,7 +19,10 @@ def test_get_names_stdout_id_1():
     """Test if output console is hero id=1."""
     result = runner.invoke(app, ["hero", "get-names", "1"])
     assert result.exit_code == 0
-    assert result.stdout == "{'name': 'npc_dota_hero_antimage', 'localized_name': 'Anti-Mage'}\n"
+    assert (
+        result.stdout
+        == "{'name': 'npc_dota_hero_antimage', 'localized_name': 'Anti-Mage'}\n"
+    )
 
 
 @pytest.mark.get_names

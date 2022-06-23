@@ -8,10 +8,10 @@ import mysql.connector
 
 
 def get_connection(
-    host_name='localhost',
-    database_name='dota2learning-db',
-    user_name='root',
-    user_password='toor'
+    host_name="localhost",
+    database_name="dota2learning-db",
+    user_name="root",
+    user_password="toor",
 ):
     """Function to create connection on Dota2Learning Database.
 
@@ -29,7 +29,7 @@ def get_connection(
             host=host_name,
             database=database_name,
             user=user_name,
-            password=user_password
+            password=user_password,
         )
         return connection
     except mysql.connector.Error as error:

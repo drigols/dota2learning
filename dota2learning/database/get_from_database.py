@@ -29,10 +29,7 @@ def get_hero_names_from_database(id: int) -> dict:
         cursor.execute(get_names_query, (id,))
         names = cursor.fetchall()
         for name in names:
-            hero_names = {
-                "name": name[0],
-                "localized_name": name[1]
-            }
+            hero_names = {"name": name[0], "localized_name": name[1]}
     except mysql.connector.Error as error:
         print("Failed to select hero names: {}".format(error))
     finally:
