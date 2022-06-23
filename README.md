@@ -74,6 +74,14 @@ healthcheck:
   retries: 6
 ```
 
+If you wish to create new features install dev dependencies and run **"pre-commit install"** to check your code style:
+
+```
+pre-commit install
+```
+
+If you want to manually run all pre-commit hooks on a repository, run **pre-commit run --all-files**. To run individual hooks use **pre-commit run <hook_id>**. You can see individual hooks in [.pre-commit-config.yaml](.pre-commit-config.yaml)
+
 Ok, now you has Python dependencies and Docker container with MySQL Database let's go be happy!
 
 ---
