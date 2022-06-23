@@ -30,7 +30,7 @@ def get_hero_names_from_database(id: int) -> dict:
         for name in names:
             hero_names = {"name": name[0], "localized_name": name[1]}
     except mysql.connector.Error as error:
-        print("Failed to select hero names: {}".format(error))
+        print(f"Failed to select hero names: {error}")
     finally:
         cursor.close()
         close_connection(connection)
