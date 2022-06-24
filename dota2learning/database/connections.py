@@ -15,13 +15,18 @@ def get_connection(
     """Function to create connection on Dota2Learning Database.
 
     Args:
-        host_name (str, optional): Hostname from your MySQL Server. Defaults to 'localhost'.
-        database_name (str, optional): Database name. Defaults to 'dota2learning'.
-        user_name (str, optional): User name. Defaults to 'root'.
-        user_password (str, optional): User password. Defaults to 'toor'.
+        host_name (str, optional):
+            Hostname from your MySQL Server. Defaults to 'localhost'.
+        database_name (str, optional):
+            Database name. Defaults to 'dota2learning'.
+        user_name (str, optional):
+            User name. Defaults to 'root'.
+        user_password (str, optional):
+            User password. Defaults to 'toor'.
 
     Returns:
-        <class 'mysql.connector.connection_cext.CMySQLConnection'>: The return is a MySQL connection.
+        <class 'mysql.connector.connection_cext.CMySQLConnection'>:
+            The return is a MySQL connection.
     """
     try:
         connection = mysql.connector.connect(
@@ -39,11 +44,13 @@ def close_connection(connection) -> bool:
     """Function to close Database connection.
 
     Args:
-        connection (mysql.connector.connection_cext): The argument received is a MySQL connection.
+        connection (mysql.connector.connection_cext):
+            The argument received is a MySQL connection.
 
     Returns:
-        bool: The original return was False when database connection was closed.
-        But, I forced the return to be True when the database connection is closed.
+        bool: The original return was False when database
+        connection was closed. But, I forced the return
+        to be True when the database connection is closed.
     """
     if not connection:
         return False

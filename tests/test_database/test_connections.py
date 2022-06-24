@@ -18,7 +18,8 @@ def test_get_connection():
 
 @pytest.mark.connections
 def test_get_connection_invalid_database():
-    """Testing if the return is None when pass invalid name from database."""
+    """Testing if the return is None when
+    pass invalid name from database."""
     result = get_connection(database_name="dotalearning")
     assert result is None
 
@@ -33,7 +34,8 @@ def test_close_connection_true():
 
 @pytest.mark.connections
 def test_close_connection_false():
-    """Testing if the return is False when function receive closed connection."""
+    """Testing if the return is False when
+    function receive closed connection."""
     connection = get_connection(database_name="dotalearning")
     result = close_connection(connection)
     assert result is False

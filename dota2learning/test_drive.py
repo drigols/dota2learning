@@ -38,7 +38,9 @@ if __name__ == "__main__":
 
     # Insert data into Hero Table.
     # print("\nTesting insert data into table:")
-    # result_insert = insert_data_into_table(insert_into_hero_table, get_heroes_stats())
+    # result_insert = insert_data_into_table(
+    #     insert_into_hero_table, get_heroes_stats()
+    # )
     # print(type(result_insert))
     # print(bool(result_insert))
 

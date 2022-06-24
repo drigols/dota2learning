@@ -34,7 +34,8 @@ def get_hero_names_from_database(id: int) -> dict:
     finally:
         cursor.close()
         close_connection(connection)
-    # Check if SELECT query return is empty, that's, don't have hero with this ID.
+    # Check if SELECT query return is empty, that's,
+    # don't have hero with this ID.
     if hero_names:
         return hero_names
     else:
