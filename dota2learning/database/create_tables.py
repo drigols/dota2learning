@@ -23,7 +23,7 @@ def create_table(sql_script: str) -> bool:
         connection = get_connection()
         if connection:
             cursor = connection.cursor()
-            result = cursor.execute(sql_script)
+            cursor.execute(sql_script)
             print("Table created successfully!")
             cursor.close()
             close_connection(connection)
