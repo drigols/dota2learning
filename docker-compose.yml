@@ -19,7 +19,6 @@ services:
       retries: 6
   db-testing:
     container_name: db-testing
-    image: mysql:latest
     restart: always
     environment:
       MYSQL_HOST: localhost
