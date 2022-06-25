@@ -38,6 +38,7 @@ pre-commit = "^2.19.0"
 flake8 = "^4.0.1"
 reorder-python-imports = "^3.1.0"
 pyupgrade = "^2.34.0"
+coverage = "^6.4.1"
 
 [tool.black]
 line-length = 79
