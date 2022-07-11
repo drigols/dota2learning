@@ -19,7 +19,7 @@ services:
       retries: 6
   db-testing:
     container_name: db-testing
-    restart: always
+    image: mysql:latest
     environment:
       MYSQL_HOST: localhost
       MYSQL_ROOT_PASSWORD: toor
