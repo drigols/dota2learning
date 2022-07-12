@@ -190,13 +190,17 @@ If you want to manually run all pre-commit hooks on a repository, run **pre-comm
        - typer
    - **Jupyter Notebook:**
  - **Backend:**
+   - **Data Validators:**
+     - Python:
+       - Pydantic
    - **Consuming API [(OpenDota)](https://docs.opendota.com/):**
      - Python:
        - requrest
        - json
    - **Database (Docker + MySQL):**
-     - **Python:**
-       - mysql-connector-python
+     - Python:
+       - SQLAlchemy
+       - PyMySQL
  - **Testing:**
    - **Python:**
      - pytest
