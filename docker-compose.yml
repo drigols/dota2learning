@@ -12,11 +12,6 @@ services:
       - "3306:3306"
     volumes:
       - ./data/db-production:/home/db-production
-    healthcheck:
-      test: mysql --user=root --password=toor dota2learning-db < /home/db-production/dumb-db-production.sql
-      interval: 30s
-      timeout: 10s
-      retries: 6
   db-testing:
     container_name: db-testing
     image: mysql:latest

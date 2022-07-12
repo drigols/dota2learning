@@ -10,6 +10,7 @@
  - [Project Settings](#settings)
  - [CLI](#cli)
  - [Testing](#testing)
+ - [New Features](#new-features)
  - [Tech Stack](#tech-stack)
 
 ---
@@ -49,7 +50,7 @@ You also will need *Docker* and *Docker Compose* in your machine to use the MySQ
 
 We've two containers with one MySQL each:
 
- - **mysql-production:**
+ - **db-production:**
    - **Database:** dota2learning-db
      - Used to store all application data.
  - **db-testing:**
@@ -64,23 +65,40 @@ sudo docker compose up -d
 The folder [./data](data) is used to shared MySQL data (database) between host machine and container.
 
 **NOTE:**<br>
-MySQL services can delay some minutes to work, that's why was created a "healthcheck" in Docker Compose that waits for the service to be available and then dumps the data:
+MySQL services can delay some minutes to work. Knowing that, I strongly recommended waiting for MySQL service is ready:
 
+**First, Let's entering on the container:**
 ```python
-healthcheck:
-  test: mysql --user=root --password=toor dota2learning-db < /home/db-production/dumb-db-production.sql
-  interval: 30s
-  timeout: 10s
-  retries: 6
+sudo docker exec -it db-production bash
 ```
 
-If you wish to create new features install dev dependencies and run **"pre-commit install"** to check your code style:
-
+**Try this until MySQL service is ready:**
+```python
+mysql --user=root --password=toor dota2learning-db
 ```
-pre-commit install
+
+**ERROR OUTPUT:**
+```python
+ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)
 ```
 
-If you want to manually run all pre-commit hooks on a repository, run **pre-commit run --all-files**. To run individual hooks use **pre-commit run <hook_id>**. You can see individual hooks in [.pre-commit-config.yaml](.pre-commit-config.yaml)
+**OK OUTPUT:**
+```python
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql>
+```
+
+**Finally, dump data (You'll first need exit from MySQL):**
+```python
+mysql --user=root --password=toor dota2learning-db < /home/db-production/dumb-db-production.sql
+```
 
 Ok, now you has Python dependencies and Docker container with MySQL Database let's go be happy!
 
@@ -148,6 +166,20 @@ To see the second approach just find for **htmlcov** directory and open **index.
 
 ---
 
+<div id="new-features"></div>
+
+# New Features
+
+If you wish to create new features install dev dependencies and run **"pre-commit install"** to check your code style:
+
+```python
+pre-commit install
+```
+
+If you want to manually run all pre-commit hooks on a repository, run **pre-commit run --all-files**. To run individual hooks use **pre-commit run <hook_id>**. You can see individual hooks in [.pre-commit-config.yaml](.pre-commit-config.yaml)
+
+---
+
 <div id="tech-stack"></div>
 
 ### Tech Stack
@@ -170,7 +202,8 @@ To see the second approach just find for **htmlcov** directory and open **index.
      - pytest
      - pytest-cov
  - **Code Style:**
-   - **Black:**
+   - **Black**
+   - **Flake8**
 
 ---
 
