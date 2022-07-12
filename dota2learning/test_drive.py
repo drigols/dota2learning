@@ -3,47 +3,33 @@
 # License: MIT
 from __future__ import annotations
 
-from dota2learning.api.opendota import get_heroes_stats
-from dota2learning.database.connections import close_connection
-from dota2learning.database.connections import get_connection
-from dota2learning.database.create_tables import create_table
-from dota2learning.database.get_from_database import (
-    get_hero_names_from_database,
-)
-from dota2learning.database.inserts import insert_data_into_table
-from dota2learning.sql.create_table import hero_table
-from dota2learning.sql.create_table import invalid_table
-from dota2learning.sql.insert_queries import insert_into_hero_table
+from dota2learning.database.connection import Connection
+from dota2learning.database.create_table import create_table_if_not_exists
+from dota2learning.models.hero_model import HeroModel
 
 
 if __name__ == "__main__":
 
-    # Test get_connection.
-    # print("\nTesting database connection:")
-    # connection = get_connection()
-    # print(type(connection))
-    # print(bool(connection))
+    # Connection instance.
+    db = Connection()
 
-    # Test close_connection.
-    # print("\nTesting close connection:")
-    # close = close_connection(connection)
-    # print(type(close))
-    # print(bool(close))
+    # Connection Testing.
+    connEngine = db.get_engine_connection()
+    print("\nConnection Testing:")
+    print("Variable result:", connEngine)
+    print("Type Result:", type(connEngine))
+    print("Bool result:", bool(connEngine))
 
-    # Create Hero table from ready SQL Script.
-    # print("\nTesting create valid table:")
-    # result_valid = create_table(hero_table)
-    # print(type(result_valid))
-    # print(bool(result_valid))
+    # Session Testing.
+    print("\nSession Testing:")
+    sess = db.get_session(connEngine)
+    print("Variable result:", sess)
+    print("Type Result:", type(sess))
+    print("Bool result:", bool(sess))
 
-    # Insert data into Hero Table.
-    # print("\nTesting insert data into table:")
-    # result_insert = insert_data_into_table(
-    #     insert_into_hero_table, get_heroes_stats()
-    # )
-    # print(type(result_insert))
-    # print(bool(result_insert))
-
-    hero_names = get_hero_names_from_database(1)
-    print(type(hero_names))
-    print(hero_names)
+    # Create Table Testing.
+    print("\nCreate Table Testing:")
+    cTable = create_table_if_not_exists(model=HeroModel)
+    print("Variable result:", cTable)
+    print("Type Result:", type(cTable))
+    print("Bool result:", bool(cTable))
