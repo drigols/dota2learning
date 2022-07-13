@@ -3,8 +3,10 @@
 # License: MIT
 from __future__ import annotations
 
+from dota2learning.api.opendota import get_heroes_stats
 from dota2learning.database.connection import Connection
 from dota2learning.database.create_table import create_table_if_not_exists
+from dota2learning.database.inserts import insert_into_table
 from dota2learning.models.hero_model import HeroModel
 
 
@@ -33,3 +35,10 @@ if __name__ == "__main__":
     print("Variable result:", cTable)
     print("Type Result:", type(cTable))
     print("Bool result:", bool(cTable))
+
+    # Inser into Table Testing.
+    print("\nInsert into Table Testing:")
+    insertIntoHero = insert_into_table(HeroModel, get_heroes_stats())
+    print("Variable result:", insertIntoHero)
+    print("Type Result:", type(insertIntoHero))
+    print("Bool result:", bool(insertIntoHero))
