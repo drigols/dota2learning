@@ -22,7 +22,7 @@ if __name__ == "__main__":
 
     # Session Testing.
     print("\nSession Testing:")
-    sess = db.get_session(connEngine)
+    sess = db.get_session()
     print("Variable result:", sess)
     print("Type Result:", type(sess))
     print("Bool result:", bool(sess))

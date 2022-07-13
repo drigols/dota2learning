@@ -31,10 +31,12 @@ class Connection:
                 print(error)
         return self.engine
 
-    def get_session(self, engine):
+    def get_session(self):
         try:
             Session = sessionmaker(
-                autocommit=False, autoflush=False, bind=engine
+                autocommit=False,
+                autoflush=False,
+                bind=self.get_engine_connection(),
             )
             session = Session()
             return session
