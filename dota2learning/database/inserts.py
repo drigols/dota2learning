@@ -21,4 +21,4 @@ def insert_into_table(model, data):
         except Exception as error:
             print("My error:", error)
     else:
-        print("Ferrooou!")
+        print("Error to insert data!")
