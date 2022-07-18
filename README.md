@@ -5,9 +5,10 @@
 
 > Statistics and Machine Learning for your Dota2 Games.
 
-## Project Overview
+## Contents
 
- - [Project Settings](#settings)
+ - [Overview](#overview)
+ - [Settings](#settings)
  - [CLI](#cli)
  - [Testing](#testing)
  - [New Features](#new-features)
@@ -15,9 +16,26 @@
 
 ---
 
+<div id="overview"></div>
+
+## Overview
+
+> The main **Dota2Learning** project goals are to provide <u>Statistics</u> and <u>Machine Learning Algorithms</u> for your Dota2 Games.
+
+Another crucials features from **Dota2Learning** project are:
+
+ - Dota2 resources (Like, heroes resources).
+ - Provide statistics for the currently Dota2 patch.
+ - Machine learning algorithms predictions.
+
+**NOTE:**<br>
+You can follow the development feature process on the [Trello Board](https://trello.com/b/3hM5390C/dota2learning).
+
+---
+
 <div id="settings"></div>
 
-## Project Settings
+## Settings
 
 To use **Dota2Learning** project first install Python (^3.10) dependencies:
 
@@ -129,7 +147,7 @@ Commands:
 ```
 
 **NOTE:**<br>
-Currently the CLI is being, but has a hero command to get a hero's stats.
+Currently the CLI is being, but has a **hero** command to get a hero's stats.
 
 ---
 
