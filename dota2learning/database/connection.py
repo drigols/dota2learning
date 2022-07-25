@@ -3,6 +3,8 @@
 # License: MIT
 from __future__ import annotations
 
+import sys
+
 from sqlalchemy import create_engine
 from sqlalchemy.exc import OperationalError
 from sqlalchemy.pool import NullPool
@@ -37,6 +39,7 @@ def get_engine_connection(
         connection = engine.connect()
     except OperationalError:
         print("OperationalError: Check your dialect URL or database service.")
+        sys.exit()
     else:
         connection.close()
         return engine
