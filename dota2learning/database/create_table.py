@@ -10,6 +10,12 @@ from dota2learning.settings import db_settings
 
 
 def create_table_if_not_exists(model):
+    """Function to create table if not exists in the Database.
+
+    Args:
+        model (object):
+            The argument received is an SQLAlchemy table (base model).
+    """
 
     # Get Engine connection.
     engine = get_engine_connection(**db_settings)
