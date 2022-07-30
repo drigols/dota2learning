@@ -5,7 +5,7 @@ from __future__ import annotations
 
 from sqlalchemy.engine.reflection import Inspector
 
-from dota2learning.database.connection import get_engine_connection
+from dota2learning.database.connections import get_engine_connection
 from dota2learning.settings import db_settings
 
 
