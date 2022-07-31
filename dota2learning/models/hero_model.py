@@ -38,3 +38,31 @@ class HeroModel(Base):
     projectile_speed = Column(Float, nullable=False)
     move_speed = Column(Float, nullable=False)
     legs = Column(Integer, nullable=False)
+
+
+fakeHeroInsert = {
+    "id": 500,
+    "name": "Drigols",
+    "localized_name": "drigols_RMG",
+    "primary_attr": "Agility",
+    "attack_type": "Range",
+    "img": "www.google.com.br",
+    "icon": "www.google.com.br",
+    "base_health": 1.5,
+    "base_health_regen": 1.5,
+    "base_mana": 1.5,
+    "base_mana_regen": 1.5,
+    "base_armor": 1.5,
+    "base_attack_min": 1.5,
+    "base_attack_max": 1.5,
+    "base_str": 1.5,
+    "base_agi": 1.5,
+    "base_int": 1.5,
+    "str_gain": 1.5,
+    "agi_gain": 1.5,
+    "int_gain": 1.5,
+    "attack_range": 1.5,
+    "projectile_speed": 1.5,
+    "move_speed": 1.5,
+    "legs": 2,
+}
